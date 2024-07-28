@@ -1,21 +1,26 @@
-// App.js
-import React from "react";
-import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
-import axios from "axios";
-import "./App.css";
-import StoryPage from "./pages/storyPage";
-import StoryDetails from "./pages/storyPage/storyDetails";
 
-axios.defaults.baseURL = "https://child.onrender.com/api"; // Removed extra '/'
+import React from "react";
+import "./App.css";
+import axios from "axios";
+import Select from "./components/Select.js";
+// axios.defaults.baseURL = "https://child.onrender.com/api"; // Removed extra '/'
 
 function App() {
+
+  const options = [
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Option 3' },
+  ];
+
   return (
    
       <div className="App">
-        <Routes>
-          <Route exact path="/" element={<StoryPage />} />
-          <Route path="/storyDetails/:id" element={<StoryDetails />} />
-        </Routes>
+        {/* <UserComponent /> */}
+        {/* <PostsComponent /> */}
+        <Select options={options} placeholder="select"/>
+        {/* <ToggleSwitch /> */}
+      
       </div>
    
   );
